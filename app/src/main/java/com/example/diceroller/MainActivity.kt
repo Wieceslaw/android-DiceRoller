@@ -6,16 +6,15 @@ import android.view.View
 import android.widget.ImageView
 
 class MainActivity : AppCompatActivity() {
-    private val imageView1 : ImageView = findViewById(R.id.imageViewDice1)
-    private val imageView2 : ImageView = findViewById(R.id.imageViewDice2)
-    private val dice = Dice(6)
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
     fun roll(view: View) {
+        val imageView1 : ImageView = findViewById(R.id.imageViewDice1)
+        val imageView2 : ImageView = findViewById(R.id.imageViewDice2)
+        val dice = Dice(6)
         imageView1.setImageResource(fetchSideImage(dice.roll()))
         imageView2.setImageResource(fetchSideImage(dice.roll()))
     }
